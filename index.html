@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>阿里山旅遊計畫 / Alishan Trip Plan</title>
+  <style>
+    html,body { height:100%; margin:0; font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', Arial; }
+    header { display:flex; align-items:center; justify-content:space-between; padding:12px 16px; background:#0b5; color:#012; }
+    #title { font-weight:700; }
+    #lang-toggle { padding:8px 12px; border-radius:6px; border:0; background:rgba(0,0,0,0.08); cursor:pointer; }
+    #content-frame { width:100%; height:calc(100% - 56px); border:0; }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="title">阿里山旅遊計畫 / Alishan Trip Plan</div>
+    <button id="lang-toggle" aria-live="polite">English</button>
+  </header>
+
+  <!-- 使用 iframe 載入靜態語系頁面，預設載入 ZH.html -->
+  <iframe id="content-frame" src="ZH.html" title="content"></iframe>
+
+  <script>
+    (function(){
+      const frame = document.getElementById('content-frame');
+      const btn = document.getElementById('lang-toggle');
+
+      function currentLangFromSrc(src){
+        if(!src) return 'ZH';
+        return src.toLowerCase().includes('en.html') ? 'EN' : 'ZH';
+      }
+
+      function setLang(lang){
+        const newSrc = (lang === 'EN') ? 'EN.html' : 'ZH.html';
+        frame.src = newSrc;
+        document.documentElement.lang = (lang === 'EN') ? 'en' : 'zh-Hant';
+        localStorage.setItem('preferredLang', lang);
+        btn.textContent = (lang === 'EN') ? '中文' : 'English';
+        btn.setAttribute('aria-label', (lang === 'EN') ? '切換到中文' : 'Switch to English');
+      }
+
+      function toggleLang(){
+        const current = currentLangFromSrc(frame.src);
+        setLang(current === 'EN' ? 'ZH' : 'EN');
+      }
+
+      // 初始化：優先使用 localStorage，如果沒有，預設載入 ZH.html
+      const saved = localStorage.getItem('preferredLang');
+      if(saved === 'EN') {
+        setLang('EN');
+      } else {
+        setLang('ZH');
+      }
+
+      btn.addEventListener('click', toggleLang);
+
+      // 鍵盤快速切換：按 L 切換語言
+      window.addEventListener('keydown', (e)=>{
+        if(e.key.toLowerCase() === 'l') toggleLang();
+      });
+    })();
+  </script>
+</body>
+</html>
