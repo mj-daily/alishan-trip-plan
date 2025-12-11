@@ -92,6 +92,41 @@
         .tag-stay { background-color: #dbeafe; color: #1e40af; }
         .tag-alert { background-color: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
         .tag-food { background-color: #ffedd5; color: #c2410c; }
+        .time-row.no-divider {
+            border-bottom: none;
+            padding-bottom: 6px;
+        }
+        .route-row {
+            position: relative;
+            height: 36px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .route-row::after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            right: 24px;
+            top: 50%;
+            border-top: 1px dashed #eee;
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+        .route-btn {
+            position: relative;
+            background: #fff;
+            color: #0f172a;
+            border: 1px solid #0f172a;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 12px;
+            box-shadow: 0 6px 16px rgba(15,23,42,0.12);
+            z-index: 1;
+        }
         
         /* Floating Language Toggle Button */
         .floating-lang-btn {
@@ -154,13 +189,16 @@
         </div>
         <div class="card-body">
             <!-- Item -->
-            <div class="time-row">
-                <div class="time-badge">19:00</div>
+            <div class="time-row no-divider">
+                <div class="time-badge">19:30</div>
                 <div class="content">
-                    <h3>Depart Zhongli</h3>
-                    <span class="tag tag-drive">Hetong Car Rental (Sienta 1.8L 5-Seater)</span>
-                    <p>Drive south via National Hwy 1. Approx 2.5-3 hrs. Rest stop: Qingshui Service Area.</p>
+                    <h3>Depart NCU</h3>
+                    <a href="https://maps.app.goo.gl/D6iskd392As9mCKX7" target="_blank" class="tag tag-drive inline-block cursor-pointer hover:opacity-80 transition">Hetong Car Rental (Sienta 1.8L 5-Seater)</a>
+                    <p>MJ picks up the car, then returns to campus to grab everyone; campus entry is free for the first 30 minutes.</p>
                 </div>
+            </div>
+            <div class="route-row">
+                <a class="route-btn" href="https://maps.app.goo.gl/Hnc4u6d6v5wrU6Wp8" target="_blank" rel="noreferrer">Route</a>
             </div>
             <!-- Item -->
             <div class="time-row">
