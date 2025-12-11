@@ -84,6 +84,35 @@
         .tag-alert { background-color: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
         .tag-food { background-color: #ffedd5; color: #c2410c; }
         
+        /* Floating Language Toggle Button */
+        .floating-lang-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .floating-lang-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+        .floating-lang-btn:active {
+            transform: scale(0.95);
+        }
+        
         .footer {
             background-color: #f9fafb;
             padding: 12px;
@@ -280,6 +309,26 @@
         <div class="footer">阿里山自駕之旅 3/3</div>
     </div>
 
+    <!-- Floating Language Toggle Button -->
+    <button id="floating-lang-toggle" class="floating-lang-btn" aria-label="Switch to English">EN</button>
+
+    <script>
+        (function(){
+            const btn = document.getElementById('floating-lang-toggle');
+            
+            function toggleLang(){
+                const newFile = 'EN.html';
+                window.location.href = newFile;
+            }
+            
+            btn.addEventListener('click', toggleLang);
+            
+            // 鍵盤快速切換：按 L 切換語言
+            window.addEventListener('keydown', (e)=>{
+                if(e.key.toLowerCase() === 'l') toggleLang();
+            });
+        })();
+    </script>
 </body>
 </html>
 
