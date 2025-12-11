@@ -1,20 +1,290 @@
-<!doctype html>
-<html lang="zh-Hant">
+<!DOCTYPE html>
+<html lang="zh-TW">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>阿里山 — 中文頁面</title>
-  <style> body{ font-family: system-ui, -apple-system, 'Noto Sans TC', 'Microsoft JhengHei', Arial; padding:20px; line-height:1.6 }</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿里山自駕分享圖卡</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap');
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+        }
+        .card {
+            width: 375px; /* Mobile width */
+            min-height: 667px;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+        }
+        .card-header {
+            padding: 24px;
+            color: white;
+            position: relative;
+            z-index: 10;
+        }
+        .card-body {
+            padding: 24px;
+            flex: 1;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .time-row {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 12px;
+        }
+        .time-badge {
+            background-color: #f3f4f6;
+            color: #374151;
+            font-weight: 800;
+            font-size: 14px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            min-width: 50px;
+            text-align: center;
+        }
+        .content h3 {
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 4px;
+            color: #1f2937;
+        }
+        .content p {
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.4;
+        }
+        .tag {
+            display: inline-block;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-right: 4px;
+            font-weight: bold;
+        }
+        .tag-veg { background-color: #dcfce7; color: #166534; }
+        .tag-drive { background-color: #fee2e2; color: #991b1b; }
+        .tag-stay { background-color: #dbeafe; color: #1e40af; }
+        .tag-alert { background-color: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+        .tag-food { background-color: #ffedd5; color: #c2410c; }
+        
+        .footer {
+            background-color: #f9fafb;
+            padding: 12px;
+            text-align: center;
+            font-size: 12px;
+            color: #9ca3af;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        /* Day specific styles */
+        .day1-header { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        .day2-header { background: linear-gradient(135deg, #065f46 0%, #10b981 100%); }
+        .day3-header { background: linear-gradient(135deg, #581c87 0%, #a855f7 100%); }
+    </style>
 </head>
 <body>
-  <h1>阿里山一日遊建議行程</h1>
-  <p>歡迎來到阿里山！以下為簡單的一日遊建議：</p>
-  <ol>
-    <li>清晨搭乘小火車或公車前往祝山觀日出（視天候而定）。</li>
-    <li>回程可於阿里山森林遊樂區散步，欣賞姊妹潭與巨木群。</li>
-    <li>午餐推薦品嘗在地山產小吃或便當。</li>
-    <li>午後走訪奮起湖老街，品嘗鐵路便當與古早味甜點。</li>
-  </ol>
-  <p>更多詳情請參考專案 README 或點選上方的語言切換按鈕切換到 English 版。</p>
+
+    <!-- Instructions -->
+    <div class="text-white text-center mb-4">
+        <p class="text-lg font-bold">👇 請重新截圖以下三張卡片 (最終修訂版) 👇</p>
+    </div>
+
+    <!-- CARD 1 -->
+    <div class="card">
+        <div class="card-header day1-header">
+            <div class="flex justify-between items-end">
+                <div>
+                    <h2 class="text-3xl font-black">DAY 1</h2>
+                    <p class="opacity-90 mt-1">12/12 (五) 夜衝嘉義</p>
+                </div>
+                <div class="text-right">
+                    <i class="fas fa-moon text-4xl opacity-20"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- Item -->
+            <div class="time-row">
+                <div class="time-badge">19:00</div>
+                <div class="content">
+                    <h3>中壢出發</h3>
+                    <span class="tag tag-drive">和通租車(Sienta 1.8L五人座)</span>
+                    <p>取車後行駛國道1號，預計 2.5-3 小時。可於清水休息站稍作停留。</p>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="time-row">
+                <div class="time-badge">22:00</div>
+                <div class="content">
+                    <h3>抵達嘉義 & 入住</h3>
+                    <span class="tag tag-stay">葉綠宿，漫漫回嘉</span>
+                    <p>先將車停於特約停車場，辦理入住手續。</p>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="time-row border-none">
+                <div class="time-badge">22:30</div>
+                <div class="content">
+                    <h3>宵夜覓食</h3>
+                    <span class="tag tag-food">文化路夜市(葷素皆宜)</span>
+                    <p>
+                        1. <strong>阿娥豆花：</strong>豆漿豆花必吃<br>
+                        2. <strong>林聰明/阿樓師：</strong>砂鍋魚頭(有素鍋菜)或雞肉飯<br>
+                        3. 夜市內有素食滷味與炒麵攤
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-auto bg-yellow-50 p-3 rounded-lg border border-yellow-200">
+                <p class="text-xs text-yellow-800 font-bold"><i class="fas fa-exclamation-triangle mr-1"></i> Sienta 滿載提醒</p>
+                <p class="text-xs text-yellow-700 mt-1">五人+行李滿載，上坡請善用 S 檔，下坡務必用 B 檔引擎煞車。</p>
+            </div>
+        </div>
+        <div class="footer">阿里山自駕之旅 1/3</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+        <div class="card-header day2-header">
+            <div class="flex justify-between items-end">
+                <div>
+                    <h2 class="text-3xl font-black">DAY 2</h2>
+                    <p class="opacity-90 mt-1">12/13 (六) 公路之旅</p>
+                </div>
+                <div class="text-right">
+                    <i class="fas fa-tree text-4xl opacity-20"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- Item -->
+            <div class="time-row">
+                <div class="time-badge">10:00</div>
+                <div class="content">
+                    <h3>出發前往阿里山</h3>
+                    <p>導航設定台18線。於觸口便利商店補給(水/暈車藥)。</p>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="time-row">
+                <div class="time-badge">11:00</div>
+                <div class="content">
+                    <h3>隙頂二延平步道</h3>
+                    <p>約 53.5K 處。停留 40 分鐘，觀景台看茶園雲海。</p>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="time-row">
+                <div class="time-badge">12:30</div>
+                <div class="content">
+                    <h3>午餐：奮起湖老街</h3>
+                    <span class="tag tag-veg">鐵路便當(可素食)</span>
+                    <p>推薦：登山食堂或雅湖便當。必買：百年檜木甜甜圈。<br><span class="text-red-500 text-xs">注意：週末停車位難找，需耐心。</span></p>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="time-row">
+                <div class="time-badge">15:00</div>
+                <div class="content">
+                    <h3>阿里山入園 & 停車</h3>
+                    <span class="tag tag-stay">高峰大飯店(五人房)</span>
+                    <p>若飯店門口無車位，依指示停至公共停車場搭接駁車。</p>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="time-row border-none">
+                <div class="time-badge">16:00</div>
+                <div class="content">
+                    <h3>關鍵任務：買車票</h3>
+                    <p class="font-bold text-red-600">至阿里山車站 2F 購買明日祝山線車票。</p>
+                    <p class="mt-2">晚餐：山賓餐廳 (石頭火鍋，可素食)。</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">阿里山自駕之旅 2/3</div>
+    </div>
+
+    <!-- CARD 3 (REVISED) -->
+    <div class="card">
+        <div class="card-header day3-header">
+            <div class="flex justify-between items-end">
+                <div>
+                    <h2 class="text-3xl font-black">DAY 3</h2>
+                    <p class="opacity-90 mt-1">12/14 (日) 日出 & 探友</p>
+                </div>
+                <div class="text-right">
+                    <i class="fas fa-sun text-4xl opacity-20"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- Item -->
+            <div class="time-row">
+                <div class="time-badge">05:00</div>
+                <div class="content">
+                    <h3>搭乘祝山觀日列車</h3>
+                    <p>氣溫極低 (5-8度)，務必穿羽絨衣。前往對高岳/祝山站。</p>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="time-row">
+                <div class="time-badge">06:40</div>
+                <div class="content">
+                    <h3>日出 @ 小笠原山</h3>
+                    <p>步行至小笠原觀景台，視野最佳。09:30 退房下山。</p>
+                </div>
+            </div>
+            <!-- Item (New) -->
+            <div class="time-row">
+                <div class="time-badge">11:30</div>
+                <div class="content">
+                    <h3>中途休憩 & 買午餐</h3>
+                    <span class="tag tag-food">觸口遊客中心 / 萬客香</span>
+                    <p>停靠休息，買午餐點心(如牛牛蛋捲)在車上簡單吃，節省時間。</p>
+                </div>
+            </div>
+            <!-- Item (Adjusted) -->
+            <div class="time-row">
+                <div class="time-badge">13:30</div>
+                <div class="content">
+                    <h3>校園採購 & 伴手禮</h3>
+                    <span class="tag tag-stay">國立嘉義大學員生消費合作社</span>
+                    <p>順路前往嘉義大學，購買著名的醬油與鮮奶冰淇淋。</p>
+                </div>
+            </div>
+            <!-- Item (Strict Deadline) -->
+            <div class="time-row border-none">
+                <div class="time-badge" style="background:#fee2e2; color:#dc2626;">14:30</div>
+                <div class="content">
+                    <h3 class="text-red-600">北上回中壢</h3>
+                    <span class="tag tag-alert">週日必塞車</span>
+                    <p><strong>務必於 14:30 離開嘉義</strong>。<br>預留 4 小時車程(含塞車)以保險。</p>
+                </div>
+            </div>
+            <div class="mt-auto bg-gray-100 p-3 rounded-lg text-center">
+                <p class="text-xs text-gray-500 font-bold">目標：18:30 抵達中壢加油 -> 19:00 還車</p>
+            </div>
+        </div>
+        <div class="footer">阿里山自駕之旅 3/3</div>
+    </div>
+
 </body>
 </html>
+
