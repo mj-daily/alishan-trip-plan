@@ -1,0 +1,24 @@
+{
+  "name": "阿里山旅遊計畫 / Alishan Trip Plan",
+  "short_name": "阿里山旅遊",
+  "description": "Complete 3-day Alishan self-driving trip guide with itinerary, restaurants, and accommodations",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' fill='%23fff'/><path d='M 38 134 L 76 76 L 96 96 L 124 48 L 162 96 L 172 134' stroke='%23000' stroke-width='4.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/><line x1='29' y1='137' x2='163' y2='137' stroke='%23000' stroke-width='2.88'/><circle cx='48' cy='143' r='3.8' fill='%23000'/><circle cx='86' cy='143' r='3.8' fill='%23000'/><circle cx='124' cy='143' r='3.8' fill='%23000'/><circle cx='153' cy='143' r='3.8' fill='%23000'/></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23fff' rx='110'/><path d='M 102 357 L 204 204 L 256 256 L 358 128 L 410 256 L 435 357' stroke='%23000' stroke-width='16' fill='none' stroke-linecap='round' stroke-linejoin='round'/><line x1='77' y1='363' x2='435' y2='363' stroke='%23000' stroke-width='8'/><circle cx='128' cy='382' r='10' fill='%23000'/><circle cx='307' cy='382' r='10' fill='%23000'/><circle cx='358' cy='382' r='10' fill='%23000'/><circle cx='410' cy='382' r='10' fill='%23000'/></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
